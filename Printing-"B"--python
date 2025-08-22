@@ -1,0 +1,10 @@
+def print_B():
+    for row in range(7):  # Loop through 7 rows
+        for col in range(5):  # Loop through 5 columns
+            if col == 0 or (col == 4 and row not in [0, 3, 6]) or ((row in [0, 3, 6]) and col < 4):
+                print("*", end="")  # Print star without moving to new line
+            else:
+                print(" ", end="")  # Print space
+        print()  # Move to next row
+
+print_B()  # Call the function
