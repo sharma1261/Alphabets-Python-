@@ -1,0 +1,42 @@
+def print_e(size):
+
+    """Function to print the letter E with stars."""
+    try:
+        for row in range(size):
+            for col in range(size):
+
+                # Conditions to draw "E"
+                if row == 0 or row == size // 2 or row == size - 1 or col == 0:
+                    print("*", end=" ")
+
+                else:
+                    print(" ", end=" ")
+
+            print()  # new line after each row
+
+    except Exception as e:
+        print("An error occurred:", e)
+
+
+def main():
+    try:
+
+        size = int(input("Enter the size of E (e.g., 5 or 7): "))
+
+        if size < 3:
+
+            print("Size too small! Please enter 3 or more.")
+
+        else:
+
+            print_e(size)
+
+    except ValueError:
+        print("Please enter a valid number.")
+
+    except Exception as e:
+        print("Unexpected error:", e)
+
+
+if __name__ == "__main__":
+    main()
