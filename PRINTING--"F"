@@ -1,0 +1,35 @@
+def print_f(size):
+    try:
+        if not isinstance(size, int):  # check if size is integer
+            raise ValueError("Size must be an integer.")
+
+        if size < 3:  # minimum size to look like F
+            raise ValueError("Size should be at least 3 for the letter F to appear.")
+
+        for row in range(size):
+            if row == 0:  # Top horizontal line
+
+                print("*" * size)
+            elif row == size // 2:  # Middle horizontal line
+                print("*" * (size - 1))
+
+            else:  # Vertical line
+                print("*")
+
+    except ValueError as ve:
+        print(ve)
+
+    except Exception as e:
+        print(f"⚠Unexpected error: {e}")
+
+
+# --- main program ---
+try:
+    user_input = input("Enter the size of letter F (minimum 3): ")
+
+    size = int(user_input)  # might raise ValueError if not a number
+
+    print_f(size)
+
+except ValueError:
+    print("Please enter a valid integer for size.")
