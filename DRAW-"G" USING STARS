@@ -1,0 +1,35 @@
+def draw_g(n=7):
+    try:
+        for i in range(n):
+            for j in range(n):
+
+                # Top horizontal line
+                if i == 0 and j > 0 and j < n - 1:
+                    print("*", end="")
+
+                # Left vertical line (upper part)
+                elif j == 0 and i > 0 and i < n - 1:
+                    print("*", end="")
+
+                # Bottom horizontal line (with gap)
+                elif i == n - 2 and j > 0 and j < n - 2:
+                    print("*", end="")
+
+                # Right vertical line (lower part of g)
+                elif j == n - 2 and i >= n // 2 and i < n - 1:
+                    print("*", end="")
+
+                # Middle horizontal line inside g
+                elif i == n // 2 and j >= n // 2 - 1:
+                    print("*", end="")
+
+                else:
+                    print(" ", end="")
+            print()
+
+    except Exception as e:
+        print("Error:", e)
+
+
+# Call the function
+draw_g()
