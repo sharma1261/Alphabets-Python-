@@ -1,0 +1,18 @@
+def print_H(height):
+    try:
+        if height < 3:
+            print("Height should be at least 3")
+            return
+        
+        mid = height // 2  # middle row for the horizontal line
+
+        for i in range(height):
+            if i == mid:
+                print("*" * height)  # middle horizontal line
+            else:
+                print("*" + " " * (height - 2) + "*")  # vertical lines
+    except Exception as e:
+        print("An error occurred:", e)
+
+# Example usage
+print_H(5)
